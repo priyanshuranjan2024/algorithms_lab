@@ -18,10 +18,8 @@ void merge(int arr[], int l, int m, int r) {
         else
             arr[k++] = R[j++];
     }
-    while (i < n1)
-        arr[k++] = L[i++];
-    while (j < n2)
-        arr[k++] = R[j++];
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
 }
 
 void mergeSort(int arr[], int l, int r) {
