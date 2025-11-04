@@ -3,17 +3,13 @@ package day8;
 public class FloydWarshall {
     final static int INF = 99999; 
 
-    // Function to perform Floyd–Warshall
     public static void floydWarshall(int graph[][]) {
         int V = graph.length;
-        int dist[][] = new int[V][V];
+        int dist[][] = new int[V][V]; //ans matrix
 
-        // Initialize the solution matrix same as input graph matrix
         for (int i = 0; i < V; i++)
             for (int j = 0; j < V; j++)
                 dist[i][j] = graph[i][j];
-
-        // Main Floyd–Warshall algorithm
         for (int k = 0; k < V; k++) { // Pick all vertices as intermediate
             for (int i = 0; i < V; i++) { // Pick all vertices as source
                 for (int j = 0; j < V; j++) { // Pick all vertices as destination
@@ -23,7 +19,6 @@ public class FloydWarshall {
             }
         }
 
-        // Print the shortest distance matrix
         printSolution(dist);
     }
 
